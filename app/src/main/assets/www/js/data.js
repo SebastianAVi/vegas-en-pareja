@@ -72,7 +72,17 @@ window.CONTACTOS = [
 
 // Galería: pon los archivos en www/media/ y agrégalos aquí.
 // tipo: "foto" | "video"
+// Ejemplos:
+//   { tipo: "foto",  src: "media/foto10.jpg", titulo: "Llegando a Vegas", fecha: "2026-12-01" },
+//   { tipo: "video", src: "media/video01.mp4", titulo: "Fuentes del Bellagio", poster: "media/foto10.jpg" }
 window.GALERIA = [
-  // { tipo: "foto",  src: "media/ejemplo.jpg", titulo: "Llegando a Vegas", fecha: "2026-12-01" },
-  // { tipo: "video", src: "media/ejemplo.mp4", titulo: "Fuentes del Bellagio", poster: "media/ejemplo.jpg" }
+  { tipo: "foto", src: "media/foto01.jpg" },
+  { tipo: "foto", src: "media/foto02.jpg" },
+  { tipo: "foto", src: "media/foto03.jpg" },
+  { tipo: "foto", src: "media/foto04.jpg" },
+  { tipo: "foto", src: "media/foto05.jpg" },
+  { tipo: "foto", src: "media/foto06.jpg" },
+  { tipo: "foto", src: "media/foto07.jpg" },
+  { tipo: "foto", src: "media/foto08.jpg" },
+  { tipo: "foto", src: "media/foto09.jpg" }
 ];
