@@ -1,0 +1,17 @@
+{
+  "name": "Vegas en Pareja",
+  "short_name": "Vegas ♥",
+  "description": "Galería y guía de nuestro viaje a Las Vegas",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#14081F",
+  "theme_color": "#14081F",
+  "lang": "es",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

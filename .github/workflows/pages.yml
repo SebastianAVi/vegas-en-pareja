@@ -1,0 +1,42 @@
+name: Publicar versión web (iPhone)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar sitio
+        run: |
+          mkdir -p _site
+          cp -r app/src/main/assets/www/. _site/
+          cd _site
+          # Lista de archivos que el iPhone guarda para usar la app sin señal
+          find . -type f ! -name sw.js ! -name precache.json | sed 's#^\./##' | sort \
+            | python3 -c "import json,sys; print(json.dumps(['./'] + [l.strip() for l in sys.stdin]))" > precache.json
+          sed -i "s/__VERSION__/${GITHUB_SHA::8}/" sw.js
+          touch .nojekyll
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
