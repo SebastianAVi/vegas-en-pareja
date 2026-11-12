@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="colorPrimary">@color/fondo</item>
+        <item name="colorAccent">@color/rosa</item>
+    </style>
+    <color name="fondo">#14081F</color>
+    <color name="rosa">#FF3D7F</color>
+    <color name="dorado">#FFC94A</color>
+</resources>

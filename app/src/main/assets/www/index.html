@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vegas en Pareja</title>
+  <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">♥</span>
+      <div>
+        <h1>Vegas en Pareja</h1>
+        <p id="subtitulo">Nuestro viaje juntos</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- GALERÍA -->
+    <section id="galeria" class="vista activa">
+      <h2>Galería</h2>
+      <div class="chips" id="filtroGaleria">
+        <button class="chip on" data-f="todo">Todo</button>
+        <button class="chip" data-f="foto">Fotos</button>
+        <button class="chip" data-f="video">Videos</button>
+      </div>
+      <div id="gridGaleria" class="grid"></div>
+    </section>
+
+    <!-- TIENDAS -->
+    <section id="tiendas" class="vista">
+      <h2>Tiendas</h2>
+      <input id="buscarTienda" class="buscar" type="search" placeholder="Buscar tienda…">
+      <div id="listaTiendas" class="lista"></div>
+    </section>
+
+    <!-- MAPA -->
+    <section id="mapa" class="vista vista-mapa">
+      <div class="chips flotante" id="filtroMapa"></div>
+      <div id="map"></div>
+      <button id="btnUbicacion" class="fab" title="Mi ubicación">◎</button>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="eventos" class="vista">
+      <h2>Eventos</h2>
+      <div id="listaEventos" class="lista"></div>
+      <button class="btn-ancho" id="btnNuevoEvento">+ Agregar evento</button>
+    </section>
+
+    <!-- EMERGENCIA -->
+    <section id="emergencia" class="vista">
+      <h2>Contactos de emergencia</h2>
+      <a class="sos" href="tel:911">🚨 Llamar al 911</a>
+      <div id="listaContactos" class="lista"></div>
+      <button class="btn-ancho" id="btnNuevoContacto">+ Agregar contacto</button>
+    </section>
+  </main>
+
+  <nav class="tabs">
+    <button data-v="galeria" class="on"><span>📸</span>Galería</button>
+    <button data-v="tiendas"><span>🛍️</span>Tiendas</button>
+    <button data-v="mapa"><span>🗺️</span>Mapa</button>
+    <button data-v="eventos"><span>🎟️</span>Eventos</button>
+    <button data-v="emergencia"><span>🆘</span>Emergencia</button>
+  </nav>
+
+  <!-- Visor de fotos/videos -->
+  <div id="visor" class="visor oculto">
+    <button class="cerrar" id="cerrarVisor">✕</button>
+    <button class="nav prev" id="prevVisor">‹</button>
+    <div id="visorContenido"></div>
+    <button class="nav next" id="nextVisor">›</button>
+    <p id="visorTitulo"></p>
+  </div>
+
+  <!-- Formulario genérico -->
+  <div id="modal" class="modal oculto">
+    <form id="form" class="tarjeta-form">
+      <h3 id="formTitulo"></h3>
+      <div id="formCampos"></div>
+      <div class="acciones">
+        <button type="button" id="formCancelar" class="sec">Cancelar</button>
+        <button type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="lib/leaflet/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
